@@ -1,0 +1,33 @@
+<h2>Astronomy Picture of the Day API</h2>
+<div class="main-div" *ngFor="let n of nasaImgObj" >
+  
+  <mat-card class="nasa-card">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image" alt="NASA logo"></div>
+      <mat-card-title>{{ n.title }}</mat-card-title>
+      <mat-card-subtitle>{{ n.date | date }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-body>
+      <img
+        class="card-img-top"
+        [src]="n.hdurl"
+        alt="Card image"
+        *ngIf="n.media_type === 'image'"
+      />
+
+   
+
+      <!-- <img mat-card-image [src]="nasaImgObj.hdurl" [alt]="Card - image" /> -->
+      <mat-card-content>
+        <p>{{ n.explanation }}</p>
+      </mat-card-content>
+      <mat-card-actions align="end" class="bottom-buttons">
+        <div fxFlex></div>
+        <p class="credit-para" *ngIf="n.copyright">
+          <mat-icon color="accent">photo_camera</mat-icon
+          >{{ n.copyright }}
+        </p>
+      </mat-card-actions>
+    </mat-card-body>
+  </mat-card>
+

@@ -1,0 +1,29 @@
+<mat-toolbar >
+  <mat-toolbar-row>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button color="primary" (click)="apodNav()">
+      APOD
+    </button>
+    <button mat-raised-button color="primary" (click)="satelliteImagingNav()">
+      Satellite Imaging
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<!-- <mat-toolbar>
+  <span>Nasa API Application</span>
+  <div class="actions">
+     <button mat-raised-button color="primary" (click)="apodNav()">
+    APOD
+  </button>
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="primary" (click)="satelliteImagingNav()">
+   Satellite Imaging
+ </button>
+  </div>
+  <span class="example-spacer"></span>
+ <span class="example-spacer"></span>
+</mat-toolbar> -->
+<div class="container main-container" style="padding: 20px;">
+  <router-outlet></router-outlet>
+</div>

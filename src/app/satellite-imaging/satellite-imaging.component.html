@@ -1,0 +1,27 @@
+
+<mat-form-field appearance="outline">
+    <mat-label>Lat</mat-label>
+    <input type="number" [(ngModel)]="lat" matInput>
+  </mat-form-field><mat-form-field appearance="outline">
+    <mat-label>Lng</mat-label>
+    <input type="number" [(ngModel)]="lng" matInput>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <input matInput [(ngModel)]="fromDate" [matDatepicker]="from" placeholder="From">
+  
+    <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+    <mat-datepicker #from></mat-datepicker>
+  </mat-form-field>
+  <button (click)="getImage()" color="primary" mat-raised-button>Get Satellite Image</button> 
+
+  <mat-card  *ngIf="satelliteImage" class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Nasa Satellite Image</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="satelliteImage.url" alt="Photo of a Shiba Inu">
+   
+  </mat-card>
+
+
